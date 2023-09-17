@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page not found</title>
+  <link rel="stylesheet" href="frontend/css/style.css">
+  <link rel="stylesheet" href="frontend/css.custom.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <!-- Preloader -->
+  <div class="spin-wrapper w-full h-full fixed z-[100] bg-secondary flex items-center justify-center bg-opacity-50">
+    <img src="frontend/img/kuru-loader.gif" alt="hertaa-kuru" width="120" class="opacity-100">
+  </div>
+
+  <!-- Header -->
+  <header class="bg-primary absolute top-0 left-0 w-full flex items-center z-10">
+    <div class="container">
+      <div class="flex items-center justify-between relative">
+        <div class="px-4">
+          <a href="index.html" class="font-bold text-lg text-dark block py-6">FK san</a>
+        </div>
+        <div class="flex items-center px-4">
+          <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 lg:hidden">
+            <span class="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
+            <span class="hamburger-line transition duration-300 ease-in-out"></span>
+            <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
+          </button>
+
+          <nav id="nav-menu" class="hidden absolute py-5 bg-primary shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+            <ul class="block lg:flex">
+              <li class="group">
+                <a href="index.html" class="text-base text-white rounded-md px-2 py-2 mx-5 flex group-hover:bg-secondary duration-300"><i class="fa fa-home m-1"></i>Home</a>
+              </li>
+              <li class="group">
+                <a href="#about" class="text-base text-white rounded-md px-2 py-2 mx-5 flex group-hover:bg-secondary duration-300"><i class="fa fa-user-secret m-1"></i>Tentang Saya</a>
+              </li>
+              <!-- Dropdown -->
+              <li class="group relative" id="dropdownButton">
+                <button class="text-base text-white rounded-md px-2 py-2 mx-5 flex group-hover:bg-secondary duration-300 focus:bg-secondary group" onclick="toggleDropdown()"><i class="fa fa-navicon m-1"></i>Portofolio<i class="fa fa-angle-down m-1"></i></button>
+                <!-- Dropdown menu -->
+                <div class="absolute bg-secondary text-white px-2 py-2 mx-10 rounded-md right-auto lg:w-full hidden" id="dropdown">
+                  <ul class="space-y-2">
+                    <li>
+                      <a href="#design" class="text-base text-white px-2 py-2 mx-auto rounded-md hover:bg-primary duration-300"><i class="fa fa-file-image-o mr-1"></i>Design</a>
+                    </li>
+                    <li>
+                      <a href="#animation" class="text-base text-white px-2 py-2 mx-auto rounded-md hover:bg-primary duration-300"><i class="fa fa-file-video-o mr-1"></i>Animation</a>
+                    </li>
+                    <li>
+                      <a href="#program" class="text-base text-white px-2 py-2 mx-auto rounded-md hover:bg-primary duration-300"><i class="fa fa-file-code-o mr-1"></i>Program</a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- Dropdown menu -->
+              </li>
+              <!-- Dropdown -->
+              <li class="group">
+                <a href="#blog" class="text-base text-white rounded-md px-2 py-2 mx-5 flex group-hover:bg-secondary duration-300"><i class="fa fa-glide-g m-1"></i>oBlog</a>
+              </li>
+              <li class="group">
+                <a href="#contact" class="text-base text-white rounded-md px-2 py-2 mx-5 flex group-hover:bg-secondary duration-300"><i class="fa fa-address-book m-1"></i>Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Header -->
+
+  <!-- 404 Section -->
+  <section id="blog" class="pt-36 pb-16">
+    <div class="container">
+        <div class="w-full px-4">
+          <div class="max-w-xl mx-auto text-center mb-16">
+            <h1 class="font-semibold text-3xl text-primary mb-2">404</h1>
+            <h2 class="font-bold text-dark text-lg mb-4 sm:text-lg">Page not found</h2>
+            <p class="font-medium text-md text-dark md:text-lg">Sorry anda belum beruntung hari ini!</p>
+          </div>
+        </div>
+    </div>
+  </section>
+  <!-- 404 Section -->
+
+<script src="frontend/js/script.js"></script>
+<script src="frontend/js/jquery-3.7.0.min.js"></script>
+<script>// preloader
+$(window).on('load',function(){$('.spin-wrapper').fadeOut();});</script>
+</body>
+</html>

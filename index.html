@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FK punya website</title>
+  <link rel="stylesheet" href="frontend/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+<body>
+  <!-- Preloader -->
+  <div class="spin-wrapper w-full h-full fixed z-[100] bg-secondary flex items-center justify-center bg-opacity-50">
+    <img src="frontend/img/kuru-loader.gif" alt="hertaa-kuru" width="120" class="opacity-100">
+    <h3 class="text-white text-3xl font-bold">Sabar...</h3>
+  </div>
+
+  <!-- Header -->
+  <header class="bg-primary absolute top-0 left-0 w-full flex items-center z-10">
+    <div class="container">
+      <div class="flex items-center justify-between relative">
+        <div class="px-4">
+          <img class="block py-6" src="frontend/img/logo.png" alt="Logo" width="128px" />
+        </div>
+        <div class="flex items-center px-4">
+          <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 lg:hidden">
+            <span class="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
+            <span class="hamburger-line transition duration-300 ease-in-out"></span>
+            <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
+          </button>
+
+          <nav id="nav-menu" class="hidden absolute py-5 bg-primary shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+            <ul class="block lg:flex">
+              <li class="group">
+                <a href="#home" class="text-base text-white rounded-md px-2 py-2 mx-5 flex group-hover:bg-secondary duration-300"><i class="fa fa-home m-1"></i>Home</a>
+              </li>
+              <li class="group">
+                <a href="#about" class="text-base text-white rounded-md px-2 py-2 mx-5 flex group-hover:bg-secondary duration-300"><i class="fa fa-user-secret m-1"></i>Tentang Saya</a>
+              </li>
+              <!-- Dropdown -->
+              <li class="group relative" id="dropdownButton">
+                <button class="text-base text-white rounded-md px-2 py-2 mx-5 flex group-hover:bg-secondary duration-300 focus:bg-secondary group" onclick="toggleDropdown()"><i class="fa fa-navicon m-1"></i>Portofolio<i class="fa fa-angle-down m-1"></i></button>
+                <!-- Dropdown menu -->
+                <div class="absolute bg-secondary text-white px-2 py-2 mx-10 rounded-md right-auto lg:w-full hidden" id="dropdown">
+                  <ul class="space-y-2">
+                    <li>
+                      <a href="#design" class="text-base text-white px-2 py-2 mx-auto rounded-md hover:bg-primary duration-300"><i class="fa fa-file-image-o mr-1"></i>Design</a>
+                    </li>
+                    <li>
+                      <a href="#animation" class="text-base text-white px-2 py-2 mx-auto rounded-md hover:bg-primary duration-300"><i class="fa fa-file-video-o mr-1"></i>Animation</a>
+                    </li>
+                    <li>
+                      <a href="#program" class="text-base text-white px-2 py-2 mx-auto rounded-md hover:bg-primary duration-300"><i class="fa fa-file-code-o mr-1"></i>Program</a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- Dropdown menu -->
+              </li>
+              <!-- Dropdown -->
+              <li class="group">
+                <a href="#blog" class="text-base text-white rounded-md px-2 py-2 mx-5 flex group-hover:bg-secondary duration-300"><i class="fa fa-glide-g m-1"></i>oBlog</a>
+              </li>
+              <li class="group">
+                <a href="#contact" class="text-base text-white rounded-md px-2 py-2 mx-5 flex group-hover:bg-secondary duration-300"><i class="fa fa-address-book m-1"></i>Kontak</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Header -->
+
+  <!-- Hero Section -->
+  <section id="home" class="pt-32">
+    <div class="container">
+      <div class="flex flex-wrap">
+        <div class="w-full self-center px-4 lg:w-1/2">
+          <h1 class="text-base font-semibold text-primary md:text-xl lg:text-2xl">Hello World, I'm <span class="block font-bold text-dark text-4xl">FK</span></h1>
+          <h2 class="font-medium text-slate-500 text-lg mb-5">Designer | Animator | Programmer</h2>
+          <p class="font-medium mb-10">Seputar tentang desain, animasi, dan program website</p>
+
+          <a href="#contact" class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:bg-dark transition duration-300 ease-in-out">Bro, Kontak Saya</a>
+        </div>
+        <div class="w-full self-end px-4 lg:w-1/2">
+          <div class="relative mt-10 lg:mt-9 lg:right-0">
+            <img src="frontend/img/profile.png" width="500px" alt="Profile" class="max-w-full mx-auto" />
+            <span class="absolute -bottom-0 -z-10 left-1/2 -translate-x-1/2">
+              <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#DC2626" d="M30.3,-45.7C39,-41.5,45.7,-32.7,53.5,-22.4C61.3,-12.2,70.2,-0.4,69.5,10.5C68.7,21.4,58.2,31.3,49.3,44.1C40.4,56.8,33.1,72.3,20.6,80.9C8,89.6,-9.7,91.4,-21,82.9C-32.3,74.3,-37.2,55.4,-42.1,41.2C-47.1,27,-52.1,17.6,-58.1,5.6C-64,-6.4,-71,-21,-66.5,-30.1C-61.9,-39.1,-45.8,-42.6,-32.7,-44.9C-19.7,-47.2,-9.9,-48.4,0.4,-49.1C10.8,-49.8,21.5,-50,30.3,-45.7Z" transform="translate(100 100) scale(1.2)" />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Hero Section -->
+
+  <!-- About Section -->
+  <section id="about" class="pt-36 pb-32 bg-secondary">
+    <div class="container">
+      <div class="flex flex-wrap">
+        <div class="w-full px-4 mb-10 lg:w-1/2">
+          <h4 class="font-bold uppercase text-primary text-lg mb-3">Tentang Saya</h4>
+          <h2 class="font bold text-white text-3xl mb-5 max-w-md lg:text-4xl">"Another whole world, can have to Acknowledge Me"</h2>
+          <p class="font-medium text-base lg:text-lg text-white">Kata-kata sang Tribal Chief. Ups, lupa perkenalkan diri my name is... Codename FK, hobi menggambar dan menonton banyak genre anime. Pekerjaan paling bisa desainer, animator, atau program kalo ada klien butuh. Alamat bisa dimana saja, asalkan jangan dihack saya :> </p>
+        </div>
+        <div class="w-full px-4 lg:w-1/2">
+          <h3 class="font-semibold text-white text-2xl mb-4 lg:text-3xl lg:pt-10">Let's friend</h3>
+          <p class="font-medium text-base mb-6 text-white lg:text-lg">Silahkan berteman. Kalo tidak yah, tidak masalah. Karna "semua orang hanyalah alat semata." *Bercanda saja kawan.</p>
+          <div class="flex items-center">
+            <!-- Youtube -->
+            <a href="https://www.youtube.com/@fk24i" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 bg-primary text-white hover:border-white hover:bg-dark hover:text-white">
+              <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>YouTube</title><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/fk.san24/" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 bg-primary text-white hover:border-white hover:bg-dark hover:text-white">
+              <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Instagram</title><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+            </a>
+            <!-- Deviantart -->
+            <a href="https://www.deviantart.com/fk234" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 bg-primary text-white hover:border-white hover:bg-dark hover:text-white">
+              <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>DeviantArt</title><path d="M19.207 4.794l.23-.43V0H15.07l-.436.44-2.058 3.925-.646.436H4.58v5.993h4.04l.36.436-4.175 7.98-.24.43V24H8.93l.436-.44 2.07-3.925.644-.436h7.35v-5.993h-4.05l-.36-.438 4.186-7.977z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- About Seciton -->
+
+  <!-- Portofolio Design Section -->
+  <section id="design" class="pt-36 pb-16">
+    <div class="container">
+      <div class="w-full px-4">
+        <div class="max-w-xl mx-auto text-center mb-16">
+          <h4 class="font-semibold text-lg text-primary mb-2">Portofolio Desain</h4>
+          <h2 class="font-bold text-dark text-3xl mb-4">Proyek 2023</h2>
+          <p class="font-medium text-md text-dark">Ini adalah beberapa desain yang sudah dibuat selama 1,5 tahun. Desain ini dibuat menggunakan Aplikasi Adobe Photoshop, Adobe Ilustrator, dan CorelDRAW.!</p>
+        </div>
+      </div>
+      <div class="w-full px-4 flex flex-wrap justify-center xl:w-10/15 xl:mx-auto">
+        <!-- Isi portofolio -->
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="rounded-md shadow-md overflow-hidden hover:scale-105 transition duration-100 hover:opacity-70">
+            <img src="frontend/img/porto-desain/brosur.png" alt="Desain Brosur" width="w-full">
+          </div>
+          <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Desain Brosur</h3>
+          <p class="font-medium text-base text-dark">Brosur adalah buklet kecil, atau kertas lipat yang memberikan detail singkat tentang apa yang dipromosikan. Brosur biasanya berisi ilustrasi dan dibuat untuk menarik perhatian dan mudah dibaca. Gaya brosur yang umum adalah satu lembar, sering kali dilipat menjadi tiga agar ukurannya pas untuk dimasukkan ke amplop.</p>
+        </div>
+        <!-- Isi portofolio -->
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="rounded-md shadow-md overflow-hidden hover:scale-105 transition duration-100 hover:opacity-70">
+            <img src="frontend/img/porto-desain/cv.png" alt="Desain CV" width="w-full">
+          </div>
+          <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Desain CV (Curicullum Vitae)</h3>
+          <p class="font-medium text-base text-dark">CV singkatan dari Curriculum Vitae. CV merupakan rangkuman riwayat hidup berisi tentang ringkasan mulai dari riwayat sekolah yang pernah ditempuh, hingga apa saja yang pernah dilakukan atau organisasi yang pernah diikuti.</p>
+        </div>
+        <!-- Isi portofolio -->
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="rounded-md shadow-md overflow-hidden hover:scale-105 transition duration-100 hover:opacity-70">
+            <img src="frontend/img/porto-desain/edit-foto.png" alt="Editing Photo" width="w-full">
+          </div>
+          <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Editing Photo</h3>
+          <p class="font-medium text-base text-dark">Editing atau menyunting adalah suatu proses dalam pekerjaan redaksi yang sifatnya mempertimbangkan setiap materi publikasi secara substansial serta up grading teknis penyajian materi publikasi setelah melewati penilaian substansi dipandang layak untuk disiarkan.</p>
+        </div>
+        <!-- Isi portofolio -->
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="rounded-md shadow-md overflow-hidden hover:scale-105 transition duration-100 hover:opacity-70">
+            <img src="frontend/img/porto-desain/flyer.png" alt="Flyer" width="w-full">
+          </div>
+          <h3 class="font-semibold text-xl text-de mt-5 mb-3">Desain Flyer</h3>
+          <p class="font-medium text-base text-dark">Flyer adalah salah satu alat pemasaran yang dirancang secara tepat dan efektif untuk menyampaikan informasi tertentu kepada pembaca.</p>
+        </div>
+        <!-- Isi portofolio -->
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="rounded-md shadow-md overflow-hidden hover:scale-105 transition duration-100 hover:opacity-70">
+            <img src="frontend/img/porto-desain/infografis.png" alt="Desain Infografis" width="w-full">
+          </div>
+          <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Desain Infografis</h3>
+          <p class="font-medium text-base text-dark">Infografis adalah kumpulan visualisasi, grafik, dan sedikit teks yang digunakan untuk penyampaian informasi. </p>
+        </div>
+        <!-- Isi portofolio -->
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="rounded-md shadow-md overflow-hidden hover:scale-105 transition duration-100 hover:opacity-70">
+            <img src="frontend/img/porto-desain/instagram-pack.png" alt="Instagram Pack" width="w-full">
+          </div>
+          <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Desain Instagram Pack</h3>
+          <p class="font-medium text-base text-dark">Instagram adalah sosial media berbasis gambar yang memberikan layanan berbagi foto atau video secara online.</p>
+        </div>
+        <!-- Isi portofolio -->
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="rounded-md shadow-md overflow-hidden hover:scale-105 transition duration-100 hover:opacity-70">
+            <img src="frontend/img/porto-desain/kalender.png" alt="Desain Kalender" width="w-full">
+          </div>
+          <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Desain Kalender</h3>
+          <p class="font-medium text-base text-dark">Kalender adalah sebuah sistem untuk memberi nama pada sebuah periode waktu dan dikenal sebagai Tanggal Kalender, perlu kita tahu sejauh mana sistem kalender itu bekerja.
+          </p>
+        </div>
+        <!-- Isi portofolio -->
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="rounded-md shadow-md overflow-hidden hover:scale-105 transition duration-100 hover:opacity-70">
+            <img src="frontend/img/porto-desain/kartu.png" alt="Desain Kartu" width="w-full">
+          </div>
+          <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Desain Kartu</h3>
+          <p class="font-medium text-base text-dark">Kartu adalah sebuah objek kecil tipis datar, umumnya terbuat dari kertas tebal atau plastik.</p>
+        </div>
+        <!-- Isi portofolio -->
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="rounded-md shadow-md overflow-hidden hover:scale-105 transition duration-100 hover:opacity-70">
+            <img src="frontend/img/porto-desain/logo.png" alt="Desain Logo" width="w-full">
+          </div>
+          <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Desain Logo</h3>
+          <p class="font-medium text-base text-dark">Logo itu adalah sebuah tulisan, gambar, atau sketsa yang memiliki makna di dalamnya dan bisa mewakili identitas atau suatu bentuk entitas, seperti perusahaan, daerah, lembaga, organisasi, negara atau produk.</p>
+        </div>
+        <!-- Isi portofolio -->
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="rounded-md shadow-md overflow-hidden hover:scale-105 transition duration-100 hover:opacity-70">
+            <img src="frontend/img/porto-desain/mockup.png" alt="Desain Mockup" width="w-full">
+          </div>
+          <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Desain Mockup</h3>
+          <p class="font-medium text-base text-dark">Mockup adalah model atau rancangan dari sebuah konsep desain yang diaplikasikan ke sebuah produk.</p>
+        </div>
+        <!-- Isi portofolio -->
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="rounded-md shadow-md overflow-hidden hover:scale-105 transition duration-100 hover:opacity-70">
+            <img src="frontend/img/porto-desain/spanduk.png" alt="Desain Spanduk" width="w-full">
+          </div>
+          <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Desain Spanduk</h3>
+          <p class="font-medium text-base text-dark">Spanduk adalah media untuk menyampaikan informasi tertentu yang ditujukan pada khalayak umum.</p>
+        </div>
+
+        <!-- Image pop up -->
+        <!-- <div class="w-full h-full fixed z-[100] bg-secondary flex items-center justify-center bg-opacity-70">
+          <span>&times;</span>
+          <img src="" alt="image">
+        </div> -->
+
+      </div>
+    </div>
+  </section>
+  <!-- Portofolio Design Section -->
+
+  <!-- Portofolio Animation Section -->
+  <section id="animation" class="pt-36 pb-16 bg-secondary">
+    <div class="container">
+      <div class="w-full px-4">
+        <div class="max-w-xl mx-auto text-center mb-16">
+          <h4 class="font-semibold text-lg text-primary mb-2">Animasi</h4>
+          <h2 class="font-bold text-white text-3xl mb-4">Proyek 2022</h2>
+          <p class="font-medium text-md text-white">Ini ada beberapa animasi motion graphic yang dibuat menggunakan Aplikasi Adobe After Effect dan Capcut. *Disarankan menggunakan wifi jika nonton</p>
+        </div>
+      </div>
+      <div class="w-full px-4 flex flex-wrap justify-center xl:w-10/15 xl:mx-auto">
+        <!-- Isi portofolio -->
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="rounded-md shadow-md overflow-hidden">
+            <iframe width="640" height="360" src="https://www.youtube.com/embed/4HeJY_xJclg?mute=1&loop=1&controls=0" frameborder="0" class="w-full"></iframe>
+          </div>
+          <h3 class="font-semibold text-xl text-white mt-5 mb-3">Portofolio CV Animation</h3>
+          <!-- <p class="font-medium text-base text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt reiciendis incidunt delectus animi quisquam itaque mollitia, nesciunt consequatur impedit autem?</p> -->
+        </div>
+        <!-- Isi portofolio -->
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="rounded-md shadow-md overflow-hidden">
+            <iframe width="640" height="360" src="https://www.youtube.com/embed/bzDCFAhfwrg?mute=1&loop=1&controls=0" frameborder="0" class="w-full"></iframe>
+          </div>
+          <h3 class="font-semibold text-xl text-white mt-5 mb-3">Motion Graphic</h3>
+          <!-- <p class="font-medium text-base text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt reiciendis incidunt delectus animi quisquam itaque mollitia, nesciunt consequatur impedit autem?</p> -->
+        </div>
+        <!-- Isi portofolio -->
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="rounded-md shadow-md overflow-hidden">
+            <iframe width="640" height="360" src="https://www.youtube.com/embed/14FAzWaNI4w?mute=1&loop=1&controls=0" frameborder="0" class="w-full"></iframe>
+          </div>
+          <h3 class="font-semibold text-xl text-white mt-5 mb-3">Photo Slideshow</h3>
+          <!-- <p class="font-medium text-base text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt reiciendis incidunt delectus animi quisquam itaque mollitia, nesciunt consequatur impedit autem?</p> -->
+        </div>
+        <!-- Isi portofolio -->
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="rounded-md shadow-md overflow-hidden">
+            <iframe width="640" height="360" src="https://www.youtube.com/embed/GI6BZ17YFls?mute=1&loop=1&controls=0" frameborder="0" class="w-full"></iframe>
+          </div>
+          <h3 class="font-semibold text-xl text-white mt-5 mb-3">Effect Color Correction</h3>
+          <!-- <p class="font-medium text-base text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt reiciendis incidunt delectus animi quisquam itaque mollitia, nesciunt consequatur impedit autem?</p> -->
+        </div>
+        <!-- Isi portofolio -->
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="rounded-md shadow-md overflow-hidden">
+            <iframe width="640" height="360" src="https://www.youtube.com/embed/jtrhvOZ0Hq8?mute=1&loop=1&controls=0" frameborder="0" class="w-full"></iframe>
+          </div>
+          <h3 class="font-semibold text-xl text-white mt-5 mb-3">Effect Camera Animation</h3>
+          <!-- <p class="font-medium text-base text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt reiciendis incidunt delectus animi quisquam itaque mollitia, nesciunt consequatur impedit autem?</p> -->
+        </div>
+        <!-- Isi portofolio -->
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="rounded-md shadow-md overflow-hidden">
+            <iframe width="640" height="360" src="https://www.youtube.com/embed/u-GL33C7Zdo?mute=1&loop=1&controls=0" frameborder="0" class="w-full"></iframe>
+          </div>
+          <h3 class="font-semibold text-xl text-white mt-5 mb-3">Walk Animation</h3>
+          <!-- <p class="font-medium text-base text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt reiciendis incidunt delectus animi quisquam itaque mollitia, nesciunt consequatur impedit autem?</p> -->
+        </div>
+        <!-- Isi portofolio -->
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="rounded-md shadow-md overflow-hidden">
+            <iframe width="640" height="360" src="https://www.youtube.com/embed/auGwPqI7Cos?mute=1&loop=1&controls=0" frameborder="0" class="w-full"></iframe>
+          </div>
+          <h3 class="font-semibold text-xl text-white mt-5 mb-3">Video Animasi Pendek</h3>
+          <!-- <p class="font-medium text-base text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt reiciendis incidunt delectus animi quisquam itaque mollitia, nesciunt consequatur impedit autem?</p> -->
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- Portofolio Animation Section -->
+
+  <!-- Portofolio Program Section -->
+  <section id="program" class="pt-36 pb-16">
+    <div class="container">
+        <div class="w-full px-4">
+          <div class="max-w-xl mx-auto text-center mb-16">
+            <h4 class="font-semibold text-lg text-primary mb-2">Program</h4>
+            <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl">First Project</h2>
+            <p class="font-medium text-md text-dark md:text-lg">Program yang bisa-bisa dibuat saja!</p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap">
+          <!-- Isi Portofolio -->
+          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+            <div class="bg-dark rounded-xl shadow-lg overflow-hidden mb-10">
+              <img src="https://source.unsplash.com/360x200?programming" alt="program 1" class="w-full" />
+              <div class="py-8 px-6">
+                <h3><a href="#" class="block mb-3 font-semibold text-xl text-white hover:text-primary truncate">Home Yamabuki Bakery</a></h3>
+                <p class="font-medium text-base text-white mb-4">Ini adalah contoh website dasar menggunakan HTML dan CSS</p>
+                <a href="#" class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:bg-white hover:text-dark duration-200">Preview</a>
+                <a href="#" class="duration-200 font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:bg-white hover:text-dark">Code</a>
+              </div>
+            </div>
+          </div>
+          <!-- Isi Portofolio -->
+          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+            <div class="bg-dark rounded-xl shadow-lg overflow-hidden mb-10">
+              <img src="https://source.unsplash.com/360x200?programming" alt="program 1" class="w-full" />
+              <div class="py-8 px-6">
+                <h3><a href="#" class="block mb-3 font-semibold text-xl text-white hover:text-primary truncate">Login Wibu HTML & CSS</a></h3>
+                <p class="font-medium text-base text-white mb-4">Berikut ini adalah desain login ala-ala wibu menggunakan dasar HTML dan CSS</p>
+                <a href="#" class="duration-200 font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:bg-white hover:text-dark">Preview</a>
+                <a href="#" class="duration-200 font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:bg-white hover:text-dark">Code</a>
+              </div>
+            </div>
+          </div>
+          <!-- Isi Portofolio -->
+          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+            <div class="bg-dark rounded-xl shadow-lg overflow-hidden mb-10">
+              <img src="https://source.unsplash.com/360x200?programming" alt="program 1" class="w-full" />
+              <div class="py-8 px-6">
+                <h3><a href="#" class="block mb-3 font-semibold text-xl text-white hover:text-primary truncate">Dashboard Admin</a></h3>
+                <p class="font-medium text-base text-white mb-4">Dashboard admin menggunakan framework css dari W3.com. Inilah contoh dashboard simpel dan sederhana.</p>
+                <a href="#" class="duration-200 font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:bg-white hover:text-dark">Preview</a>
+                <a href="#" class="duration-200 font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:bg-white hover:text-dark">Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+  <!-- Portofolio Program Section -->
+
+  <!-- Blog Section -->
+  <section id="blog" class="pt-36 pb-32 bg-secondary">
+    <div class="container">
+        <div class="w-full px-4">
+          <div class="max-w-xl mx-auto text-center mb-16">
+            <h4 class="font-semibold text-lg text-primary mb-2"><i class="fa fa-glide-g"></i>oBlog</h4>
+            <h2 class="font-bold text-white text-3xl mb-4 sm:text-4xl">Goblog punya berita terkini</h2>
+            <p class="font-medium text-md text-white md:text-lg">Adapun berita-berita tidak penting dari saya, dan berita khas warga lokal makassar, dan seluruh warga +62 Indonesia yang paling sepuh!</p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap">
+          <!-- Isi Berita / blog -->
+          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+            <div class="bg-slate-100 rounded-xl shadow-lg overflow-hidden mb-10">
+              <img src="https://source.unsplash.com/360x200?programming" alt="Berita 1" class="w-full" />
+              <div class="py-8 px-6">
+                <h3><a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate">Tutorial After Effects - Membuat Transisi Logo</a></h3>
+                <p class="font-medium text-base text-dark mb-4">Tutorial ini tentang bagaimana cara membuat transisi  logo ala Netflix</p>
+                <a href="#" class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:bg-dark duration-200">Baca Selengkapnya</a>
+              </div>
+            </div>
+          </div>
+          <!-- Isi Berita / blog -->
+          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+            <div class="bg-slate-100 rounded-xl shadow-lg overflow-hidden mb-10">
+              <img src="https://source.unsplash.com/360x200?programming" alt="Berita 1" class="w-full" />
+              <div class="py-8 px-6">
+                <h3><a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate">Judul Berita</a></h3>
+                <p class="font-medium text-base text-dark mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, fugiat.</p>
+                <a href="#" class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:bg-dark duration-200">Baca Selengkapnya</a>
+              </div>
+            </div>
+          </div>
+          <!-- Isi Berita / blog -->
+          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+            <div class="bg-slate-100 rounded-xl shadow-lg overflow-hidden mb-10">
+              <img src="https://source.unsplash.com/360x200?programming" alt="Berita 1" class="w-full" />
+              <div class="py-8 px-6">
+                <h3><a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate">Judul Berita</a></h3>
+                <p class="font-medium text-base text-dark mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, fugiat.</p>
+                <a href="#" class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:bg-dark duration-200">Baca Selengkapnya</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+  <!-- Blog Section -->
+
+  <!-- Contact Section -->
+  <footer id="contact" class="pt-36 pb-32">
+    <div class="container">
+      <div class="w-full px-4">
+        <div class="max-w-xl mx-auto text-center mb-16">
+          <h4 class="font-semibold text-lg text-primary mb-2">Kontak</h4>
+          <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl">Hubungi jika Penting</h2>
+          <p class="font-medium text-md text-dark md:text-lg">*kalo bisa dibantu.</p>
+        </div>
+      </div>
+
+      <form>
+        <div class="w-full lg:w-2/3 lg:mx-auto">
+          <div class="w-full px-4 mb-8">
+            <label for="name" class="text-base font-bold text-dark">Nama</label>
+            <input type="text" id="name" class="w-full text-dark bg-slate-200 p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary" />
+          </div>
+          <div class="w-full px-4 mb-8">
+            <label for="email" class="text-base font-bold text-dark">Email</label>
+            <input type="email" id="email" class="w-full text-dark bg-slate-200 p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary" />
+          </div>
+          <div class="w-full px-4 mb-8">
+            <label for="message" class="text-base font-bold text-dark">Pesan</label>
+            <textarea type="text" id="message" class="w-full text-dark bg-slate-200 p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary h-32"></textarea>
+          </div>
+          <div class="w-full">
+            <button class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full w-full hover:bg-secondary hover:shadow-lg transition duration-500">Kirim</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </footer>
+  <!-- Contact Section -->
+
+  <!-- Footer -->
+  <footer class="bg-dark pt-24 pb-12">
+    <div class="container">
+      <!-- Isi Footer -->
+      <div class="flex flex-wrap">
+        <div class="w-full px-4 mb-12 text-slate-300 font-medium md:w-1/3">
+          <h2 class="font-bold text-4xl text-white mb-5">FK</h2>
+          <h3 class="font-bold text-2xl mb-2">Hubungi jika penting</h3>
+          <p>percetakanminifk24@gmail.com</p>
+          <p>Alamat dimana saja</p>
+          <p>Makassar</p>
+        </div>
+        <!-- Isi Footer -->
+        <div class="w-full px-4 mb-12 md:w-1/3">
+          <h3 class="font-semibold text-xl text-white mb-5">Kategori Tulisan</h3>
+          <ul class="text-slate-300">
+            <li>
+              <a href="#" class="inline-block text-base hover:text-primary mb-3">Desain Grafis</a>
+            </li>
+            <li>
+              <a href="#" class="inline-block text-base hover:text-primary mb-3">Animasi</a>
+            </li>
+            <li>
+              <a href="#" class="inline-block text-base hover:text-primary mb-3">Programming</a>
+            </li>
+          </ul>
+        </div>
+        <!-- Isi Footer -->
+        <div class="w-full px-4 mb-12 md:w-1/3">
+          <h3 class="font-semibold text-xl text-white mb-5">Tautan</h3>
+          <ul class="text-slate-300">
+            <li>
+              <a href="#home" class="inline-block text-base hover:text-primary mb-3">Beranda</a>
+            </li>
+            <li>
+              <a href="#about" class="inline-block text-base hover:text-primary mb-3">Tentang Saya</a>
+            </li>
+            <li>
+              <a href="#design" class="inline-block text-base hover:text-primary mb-3">Portofolio Design</a>
+              <a href="#animation" class="inline-block text-base hover:text-primary mb-3">Portofolio Animation</a>
+              <a href="#program" class="inline-block text-base hover:text-primary mb-3">Portofolio Program</a>
+            </li>
+            <li>
+              <a href="#blog" class="inline-block text-base hover:text-primary mb-3">goBlog</a>
+            </li>
+            <li>
+              <a href="#contact" class="inline-block text-base hover:text-primary mb-3">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Icon sosmed -->
+      <div class="w-full pt-10 border-t border-slate-700">
+        <div class="flex items-center justify-center mb-5">
+          <!-- Youtube -->
+          <a href="https://www.youtube.com/@fk24i" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 bg-primary text-white hover:border-white hover:bg-dark hover:text-white">
+            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>YouTube</title><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/fk.san24/" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 bg-primary text-white hover:border-white hover:bg-dark hover:text-white">
+            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Instagram</title><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+          </a>
+          <!-- Deviantart -->
+          <a href="https://www.deviantart.com/fk234" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 bg-primary text-white hover:border-white hover:bg-dark hover:text-white">
+            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>DeviantArt</title><path d="M19.207 4.794l.23-.43V0H15.07l-.436.44-2.058 3.925-.646.436H4.58v5.993h4.04l.36.436-4.175 7.98-.24.43V24H8.93l.436-.44 2.07-3.925.644-.436h7.35v-5.993h-4.05l-.36-.438 4.186-7.977z"/></svg>
+          </a>
+        </div>
+        <!-- Text footer -->
+        <p class="font-medium text-sm text-slate-500 text-center">Made by FK using Tailwind CSS</p>
+      </div>
+    </div>
+
+  </footer>
+  <!-- Footer -->
+
+<script src="frontend/js/script.js"></script>
+<script src="frontend/js/jquery-3.7.0.min.js"></script>
+<script>$(window).on('load',function(){$('.spin-wrapper').fadeOut();});</script>
+</body>
+</html>
